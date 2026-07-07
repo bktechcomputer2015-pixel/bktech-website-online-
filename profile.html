@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Dashboard | BKTech</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+body{
+margin:0;
+background:#f5f7fb;
+font-family:'Poppins',sans-serif;
+}
+
+.header{
+background:#1565C0;
+color:#fff;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.header h2{
+margin:0;
+}
+
+.container{
+width:95%;
+max-width:1200px;
+margin:30px auto;
+}
+
+.grid{
+display:grid;
+grid-template-columns:320px 1fr;
+gap:25px;
+}
+
+.card{
+background:#fff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+margin-bottom:20px;
+}
+
+.profile-img{
+width:120px;
+height:120px;
+border-radius:50%;
+margin:auto;
+display:block;
+border:5px solid #1565C0;
+}
+
+.info{
+text-align:center;
+margin-top:15px;
+}
+
+.info h3{
+margin:10px 0;
+color:#1565C0;
+}
+
+.menu a{
+display:block;
+padding:14px;
+margin:10px 0;
+background:#1565C0;
+color:#fff;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.menu a:hover{
+background:#0D47A1;
+}
+
+.dashboard-title{
+font-size:28px;
+font-weight:700;
+margin-bottom:20px;
+color:#1565C0;
+}
+
+.status{
+color:green;
+font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h2>BKTech Student Dashboard</h2>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+<div class="container">
+
+<div class="grid">
+
+<div>
+
+<div class="card">
+
+<img src="images/student.png" class="profile-img">
+
+<div class="info">
+
+<h3 id="studentName">
+Loading...
+</h3>
+
+<p id="studentEmail">
+Loading...
+</p>
+
+<p class="status">
+🟢 Active Student
+</p>
+
+</div>
+
+</div>
+
+<div class="card menu">
+
+<a href="#">
+🏠 Dashboard
+</a>
+
+<a href="#">
+📚 My Courses
+</a>
+
+<a href="#">
+📄 Study Material
+</a>
+
+<a href="#">
+🎥 Live Classes
+</a>
+
+<a href="#">
+📜 Certificate
+</a>
+
+<a href="#">
+💳 Payment History
+</a>
+
+<a href="#">
+📞 Contact Institute
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+<div class="card">
+
+<h2 class="dashboard-title">
+Welcome Student 👋
+</h2>
+
+<p>
+Welcome to BKTech Computer & Library Student Portal.
+</p>
+
+</div>
+<div class="card">
+
+<h3>👨‍🎓 Student Information</h3>
+
+<p><strong>Full Name :</strong>
+<span id="profileName">Loading...</span>
+</p>
+
+<p><strong>Email :</strong>
+<span id="profileEmail">Loading...</span>
+</p>
+
+<p><strong>Mobile :</strong>
+<span id="profileMobile">Loading...</span>
+</p>
+
+<p><strong>Course :</strong>
+<span id="profileCourse">Not Assigned</span>
+</p>
+
+<p><strong>Admission Date :</strong>
+<span id="profileDate">Loading...</span>
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📚 My Course</h3>
+
+<p>
+Your enrolled course details will appear here.
+</p>
+
+<button onclick="window.location.href='courses.html'">
+View Courses
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>🎥 Live Classes</h3>
+
+<p>Join today's live class instantly.</p>
+
+<button onclick="window.open('https://www.youtube.com/@BktechComputerandlibrary/live')">
+
+Join Live Class
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>📄 Study Materials</h3>
+
+<p>Download Notes, PDF & Assignments</p>
+
+<button onclick="window.location.href='pdf.html'">
+
+Download Notes
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>📢 Latest Notice</h3>
+
+<div id="noticeList">
+
+<p>No Notice Available</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>💳 Payment Status</h3>
+
+<p>
+
+Status :
+<span style="color:green;font-weight:bold;">
+
+Pending Verification
+
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/profile.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BKTech Admin Dashboard</title>
+
+<link rel="icon" href="icons/favicon.png">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+.sidebar{
+
+position:fixed;
+left:0;
+top:0;
+width:260px;
+height:100vh;
+background:#1565C0;
+color:#fff;
+padding:20px;
+overflow-y:auto;
+
+}
+
+.logo{
+
+text-align:center;
+margin-bottom:30px;
+
+}
+
+.logo img{
+
+width:80px;
+height:80px;
+border-radius:50%;
+background:#fff;
+padding:8px;
+
+}
+
+.logo h2{
+
+margin-top:10px;
+font-size:22px;
+
+}
+
+.logo p{
+
+font-size:13px;
+opacity:.8;
+
+}
+
+.sidebar a{
+
+display:block;
+padding:14px;
+margin:8px 0;
+border-radius:10px;
+text-decoration:none;
+color:#fff;
+background:rgba(255,255,255,.10);
+transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+background:#0D47A1;
+
+}
+
+.main{
+
+margin-left:260px;
+padding:25px;
+
+}
+
+.topbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#fff;
+padding:18px 22px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.admin-info{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.admin-info img{
+
+width:50px;
+height:50px;
+border-radius:50%;
+border:3px solid #1565C0;
+
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:25px;
+
+}
+
+.card{
+
+background:#fff;
+padding:25px;
+border-radius:16px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+text-align:center;
+
+}
+
+.card i{
+
+font-size:35px;
+color:#1565C0;
+margin-bottom:10px;
+
+}
+
+.card h2{
+
+font-size:34px;
+color:#1565C0;
+
+}
+
+.card p{
+
+margin-top:8px;
+font-weight:600;
+
+}
+
+.section{
+
+margin-top:30px;
+background:#fff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.section h3{
+
+margin-bottom:20px;
+color:#1565C0;
+
+}
+
+input,
+textarea,
+select{
+
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:10px;
+outline:none;
+
+}
+
+button{
+
+background:#1565C0;
+color:#fff;
+padding:12px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+
+}
+
+button:hover{
+
+background:#0D47A1;
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+position:relative;
+width:100%;
+height:auto;
+
+}
+
+.main{
+
+margin-left:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+
+<img src="images/logo.png" alt="BKTech">
+
+<h2>BKTech</h2>
+
+<p>Admin Dashboard</p>
+
+</div>
+
+<a href="#"><i class="fas fa-chart-line"></i> Dashboard</a>
+
+<a href="#"><i class="fas fa-user-graduate"></i> Students</a>
+
+<a href="#"><i class="fas fa-book-open"></i> Courses</a>
+
+<a href="#"><i class="fas fa-bullhorn"></i> Notices</a>
+
+<a href="#"><i class="fas fa-video"></i> Live Classes</a>
+
+<a href="#"><i class="fas fa-image"></i> Gallery</a>
+
+<a href="#"><i class="fas fa-file-pdf"></i> PDFs</a>
+
+<a href="#"><i class="fas fa-credit-card"></i> Payments</a>
+
+<a href="#" onclick="adminLogout()">
+
+<i class="fas fa-sign-out-alt"></i>
+
+Logout
+
+</a>
+
+</div>
+
+<div class="main">
+
+<div class="topbar">
+
+<h2>BKTech Admin Dashboard</h2>
+
+<div class="admin-info">
+
+<img src="images/admin.png" alt="Admin">
+
+<div>
+
+<h4 id="adminEmail">Loading...</h4>
+
+<p>Administrator</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fas fa-user-graduate"></i>
+
+<h2 id="studentCount">0</h2>
+
+<p>Total Students</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-book"></i>
+
+<h2 id="courseCount">0</h2>
+
+<p>Total Courses</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-bullhorn"></i>
+
+<h2 id="noticeCount">0</h2>
+
+<p>Total Notices</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-envelope"></i>
+
+<h2 id="enquiryCount">0</h2>
+
+<p>Total Enquiries</p>
+
+</div>
+<!-- ===========================
+NOTICE MANAGEMENT
+=========================== -->
+
+<div class="card">
+
+<h3><i class="fas fa-bullhorn"></i> Notice Management</h3>
+
+<input type="text" id="noticeTitle" placeholder="Notice Title">
+
+<textarea id="noticeMessage" rows="5" placeholder="Write Notice Here..."></textarea>
+
+<button onclick="addNotice()">
+<i class="fas fa-paper-plane"></i>
+Publish Notice
+</button>
+
+</div>
+
+<!-- ===========================
+COURSE MANAGEMENT
+=========================== -->
+
+<div class="card">
+
+<h3><i class="fas fa-book"></i> Add New Course</h3>
+
+<input type="text" id="courseName" placeholder="Course Name">
+
+<input type="number" id="courseFee" placeholder="Course Fee">
+
+<textarea id="courseDescription" rows="4"
+placeholder="Course Description"></textarea>
+
+<button onclick="addCourse()">
+
+<i class="fas fa-plus-circle"></i>
+
+Add Course
+
+</button>
+
+</div>
+
+<!-- ===========================
+LIVE CLASS
+=========================== -->
+
+<div class="card">
+
+<h3><i class="fas fa-video"></i> Live Class</h3>
+
+<input
+type="url"
+id="liveLink"
+placeholder="Paste YouTube Live Link">
+
+<button onclick="updateLiveClass()">
+
+<i class="fas fa-upload"></i>
+
+Update Live Link
+
+</button>
+
+</div>
+
+<!-- ===========================
+GALLERY UPLOAD
+=========================== -->
+
+<div class="card">
+
+<h3><i class="fas fa-image"></i> Gallery Upload</h3>
+
+<input
+type="file"
+id="galleryImage"
+accept="image/*">
+
+<button onclick="uploadGallery()">
+
+<i class="fas fa-cloud-upload-alt"></i>
+
+Upload Image
+
+</button>
+
+</div>
+
+<!-- ===========================
+PDF UPLOAD
+=========================== -->
+
+<div class="card">
+
+<h3><i class="fas fa-file-pdf"></i> Study PDF Upload</h3>
+
+<input
+type="file"
+id="pdfFile"
+accept=".pdf">
+
+<button onclick="uploadPDF()">
+
+<i class="fas fa-file-upload"></i>
+
+Upload PDF
+
+</button>
+
+</div>
+<!-- ===========================
+REGISTERED STUDENTS
+=========================== -->
+  
+<div class="section">
+
+<h3>🎓 Pending Admission Requests</h3>
+
+<div id="admissionList">
+
+<p>No Admission Requests</p>
+
+</div>
+
+</div>
+<div class="section">
+
+<h3><i class="fas fa-users"></i> Registered Students</h3>
+
+<div id="studentList">
+
+<table style="width:100%;border-collapse:collapse;">
+
+<thead>
+
+<tr style="background:#1565C0;color:#fff;">
+
+<th style="padding:12px;">Name</th>
+<th>Email</th>
+<th>Course</th>
+<th>Mobile</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="studentTable">
+
+<tr>
+
+<td colspan="5" style="text-align:center;padding:20px;">
+No Students Found
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- ===========================
+ENQUIRIES
+=========================== -->
+
+<div class="section">
+
+<h3><i class="fas fa-envelope-open-text"></i> Student Enquiries</h3>
+
+<div id="enquiryList">
+
+<p>No Enquiries Available.</p>
+
+</div>
+
+</div>
+
+<!-- ===========================
+RECENT ACTIVITY
+=========================== -->
+
+<div class="section">
+
+<h3><i class="fas fa-history"></i> Recent Activity</h3>
+
+<ul id="activityList" style="line-height:2;padding-left:20px;">
+
+<li>✅ Admin Dashboard Started</li>
+
+<li>📚 Course Management Ready</li>
+
+<li>📢 Notice Board Ready</li>
+
+<li>🎥 Live Class Module Ready</li>
+
+<li>🖼 Gallery Module Ready</li>
+
+<li>📄 PDF Upload Ready</li>
+
+</ul>
+
+</div>
+
+<!-- ===========================
+PAYMENT RECORDS
+=========================== -->
+
+<div class="section">
+
+<h3><i class="fas fa-credit-card"></i> Payment Records</h3>
+
+<div id="paymentList">
+
+<p>No Payment Records Found.</p>
+
+</div>
+
+</div>
+
+<!-- ===========================
+SYSTEM STATUS
+=========================== -->
+
+<div class="section">
+
+<h3><i class="fas fa-server"></i> System Status</h3>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+
+<div class="card">
+
+<i class="fas fa-database"></i>
+
+<h2>Online</h2>
+
+<p>Cloud Firestore</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-user-shield"></i>
+
+<h2>Secure</h2>
+
+<p>Firebase Authentication</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-cloud"></i>
+
+<h2>Connected</h2>
+
+<p>Firebase Storage</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-globe"></i>
+
+<h2>Active</h2>
+
+<p>BKTech Website</p>
+
+</div>
+
+</div>
+
+</div>
+  <!-- ===========================
+FOOTER
+=========================== -->
+
+<footer style="margin-top:30px;
+text-align:center;
+padding:20px;
+background:#1565C0;
+color:#fff;
+border-radius:15px;">
+
+<p>
+© 2026 BKTech Computer & Library
+</p>
+
+<p>
+Powered by BKTech Development Team
+</p>
+
+</footer>
+
+</div>
+<!-- End Main -->
+
+<!-- ===========================
+FIREBASE & ADMIN SCRIPT
+=========================== -->
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/admin.js"></script>
+
+<script>
+
+// Temporary Functions
+// Real Firebase code will be in admin.js
+
+function adminLogout(){
+
+if(confirm("Are you sure you want to logout?")){
+
+window.location.href="login.html";
+
+}
+
+}
+
+function uploadGallery(){
+
+alert("Gallery Upload will be connected with Firebase Storage.");
+
+}
+
+function uploadPDF(){
+
+alert("PDF Upload will be connected with Firebase Storage.");
+
+}
+
+</script>
+
+</body>
+
+</html>

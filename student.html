@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Dashboard | BKTech Computer & Library</title>
+
+<meta name="theme-color" content="#1565C0">
+
+<link rel="icon" href="icons/favicon.png">
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/student.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+HEADER
+========================= -->
+
+<header class="header">
+
+<div class="logo">
+
+<img src="images/logo.png" alt="BKTech Logo">
+
+<div>
+
+<h2>BKTech</h2>
+
+<p>Student Dashboard</p>
+
+</div>
+
+</div>
+
+<div class="header-right">
+
+<span id="studentEmail">
+
+Loading...
+
+</span>
+
+<button onclick="studentLogout()" class="logoutBtn">
+
+<i class="fas fa-sign-out-alt"></i>
+
+Logout
+
+</button>
+
+</div>
+
+</header>
+
+<!-- =========================
+WELCOME
+========================= -->
+
+<section class="welcome">
+
+<h1>
+
+Welcome,
+
+<span id="studentName">
+
+Student
+
+</span>
+
+</h1>
+
+<p>
+
+Welcome to BKTech Computer & Library Student Portal
+
+</p>
+
+</section>
+
+<!-- =========================
+PROFILE
+========================= -->
+
+<section class="profile">
+
+<div class="profile-card">
+
+<img
+id="studentPhoto"
+src="images/user.png"
+alt="Student">
+
+<h2 id="profileName">
+
+Loading...
+
+</h2>
+
+<p id="profileCourse">
+
+Loading...
+
+</p>
+
+<div class="profile-info">
+
+<p>
+
+<b>Student ID :</b>
+
+<span id="studentId">
+
+Loading...
+
+</span>
+
+</p>
+
+<p>
+
+<b>Mobile :</b>
+
+<span id="studentMobile">
+
+Loading...
+
+</span>
+
+</p>
+
+<p>
+
+<b>Email :</b>
+
+<span id="profileEmail">
+
+Loading...
+
+</span>
+
+</p>
+
+<p>
+
+<b>Status :</b>
+
+<span id="studentStatus">
+
+Approved
+
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+DASHBOARD
+========================= -->
+
+<section class="dashboard">
+
+<div class="card">
+
+<i class="fas fa-book"></i>
+
+<h3>My Course</h3>
+
+<p id="dashboardCourse">
+
+Loading...
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-calendar-check"></i>
+
+<h3>Admission Date</h3>
+
+<p id="admissionDate">
+
+Loading...
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-user-check"></i>
+
+<h3>Status</h3>
+
+<p id="dashboardStatus">
+
+Approved
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-id-card"></i>
+
+<h3>Student ID</h3>
+
+<p id="dashboardStudentId">
+
+Loading...
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+QUICK ACTIONS
+========================= -->
+
+<section class="quick-actions">
+
+<h2>Quick Actions</h2>
+
+<div class="action-grid">
+
+<a href="#" id="liveClassBtn" class="action-card">
+
+<i class="fas fa-video"></i>
+
+<h3>Join Live Class</h3>
+
+<p>Click to Join Live Session</p>
+
+</a>
+
+<a href="#pdfSection" class="action-card">
+
+<i class="fas fa-file-pdf"></i>
+
+<h3>PDF Notes</h3>
+
+<p>Download Study Materials</p>
+
+</a>
+
+<a href="#noticeSection" class="action-card">
+
+<i class="fas fa-bullhorn"></i>
+
+<h3>Latest Notices</h3>
+
+<p>Institute Updates</p>
+
+</a>
+
+<a href="index.html" class="action-card">
+
+<i class="fas fa-home"></i>
+
+<h3>Home</h3>
+
+<p>Go to Homepage</p>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- =========================
+PDF NOTES
+========================= -->
+
+<section id="pdfSection" class="pdf-section">
+
+<h2>PDF Notes</h2>
+
+<div id="pdfContainer" class="pdf-grid">
+
+<!-- PDF Auto Load -->
+
+</div>
+
+</section>
+
+<!-- =========================
+NOTICE
+========================= -->
+
+<section id="noticeSection" class="notice-section">
+
+<h2>Latest Notices</h2>
+
+<div id="noticeContainer">
+
+<!-- Notice Auto Load -->
+
+</div>
+
+</section>
+<!-- =========================
+GALLERY
+========================= -->
+
+<section class="gallery-section">
+
+<h2>BKTech Gallery</h2>
+
+<div id="galleryContainer" class="gallery-grid">
+
+<!-- Gallery Images Auto Load -->
+
+</div>
+
+</section>
+
+<!-- =========================
+PROFILE SUMMARY
+========================= -->
+
+<section class="summary">
+
+<h2>Student Summary</h2>
+
+<div class="summary-grid">
+
+<div class="summary-card">
+
+<i class="fas fa-user-graduate"></i>
+
+<h3>Student Name</h3>
+
+<p id="summaryName">
+
+Loading...
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<i class="fas fa-book-open"></i>
+
+<h3>Course</h3>
+
+<p id="summaryCourse">
+
+Loading...
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<i class="fas fa-phone"></i>
+
+<h3>Mobile</h3>
+
+<p id="summaryMobile">
+
+Loading...
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<i class="fas fa-envelope"></i>
+
+<h3>Email</h3>
+
+<p id="summaryEmail">
+
+Loading...
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+CONTACT
+========================= -->
+
+<section class="contact-section">
+
+<h2>Need Help?</h2>
+
+<div class="contact-box">
+
+<p>
+
+📍 Bhore–Vijaipur Road,
+Gopalganj, Bihar - 841426
+
+</p>
+
+<p>
+
+📞 6200287571 / 9504810427
+
+</p>
+
+<p>
+
+📧 bktechcomputerandlibrary@gmail.com
+
+</p>
+
+<a
+href="https://wa.me/916200287571"
+target="_blank"
+class="contact-btn">
+
+<i class="fab fa-whatsapp"></i>
+
+Chat on WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<p>
+
+© 2026 BKTech Computer & Library
+
+</p>
+
+<p>
+
+Student Dashboard
+
+</p>
+
+</footer>
+<!-- =========================
+WHATSAPP FLOATING BUTTON
+========================= -->
+
+<a
+href="https://wa.me/916200287571"
+target="_blank"
+class="whatsapp">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- =========================
+LOADING
+========================= -->
+
+<div id="loading" class="loading">
+
+<div class="loader"></div>
+
+<p>Loading Student Dashboard...</p>
+
+</div>
+
+<!-- =========================
+BACK TO TOP
+========================= -->
+
+<button
+id="topBtn"
+class="top-btn"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+<i class="fas fa-arrow-up"></i>
+
+</button>
+
+<!-- =========================
+JAVASCRIPT
+========================= -->
+
+<script type="module" src="js/student.js"></script>
+
+<script>
+
+window.addEventListener("scroll",()=>{
+
+const btn=document.getElementById("topBtn");
+
+if(window.scrollY>300){
+
+btn.style.display="flex";
+
+}else{
+
+btn.style.display="none";
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
