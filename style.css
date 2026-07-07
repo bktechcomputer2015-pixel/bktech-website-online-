@@ -1,0 +1,1141 @@
+/* =====================================
+   BKTech Computer & Library
+   Final style.css - Part 1
+===================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f5f7fb;
+color:#222;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+ul{
+list-style:none;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* =========================
+TOP BAR
+========================= */
+
+.top-bar{
+background:#1565C0;
+color:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px 5%;
+font-size:14px;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.top-left{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.top-left span{
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.top-right{
+display:flex;
+gap:15px;
+}
+
+.top-right a{
+color:#fff;
+font-size:18px;
+transition:.3s;
+}
+
+.top-right a:hover{
+transform:scale(1.2);
+color:#FFD54F;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header{
+position:sticky;
+top:0;
+z-index:1000;
+background:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 5%;
+box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+width:60px;
+height:60px;
+object-fit:contain;
+}
+
+.logo h2{
+color:#1565C0;
+font-size:28px;
+font-weight:700;
+}
+
+.logo p{
+font-size:13px;
+color:#666;
+}
+
+#navbar{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+#navbar a{
+font-weight:600;
+transition:.3s;
+}
+
+#navbar a:hover{
+color:#1565C0;
+}
+
+.login-btn{
+background:#1565C0;
+color:#fff !important;
+padding:10px 18px;
+border-radius:8px;
+transition:.3s;
+}
+
+.login-btn:hover{
+background:#0d47a1;
+}
+
+#menuBtn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:50px;
+padding:70px 5%;
+background:linear-gradient(135deg,#1565C0,#42A5F5);
+color:#fff;
+}
+
+.hero-left h1{
+font-size:55px;
+line-height:1.2;
+margin:20px 0;
+}
+
+.hero-left span{
+color:#FFD54F;
+}
+
+.hero-left p{
+font-size:18px;
+max-width:520px;
+margin-bottom:30px;
+}
+
+.tag{
+display:inline-block;
+background:#FFD54F;
+color:#222;
+padding:8px 18px;
+border-radius:30px;
+font-weight:600;
+}
+
+.hero-btns{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn,
+.btn2{
+padding:14px 28px;
+border-radius:10px;
+font-weight:600;
+transition:.3s;
+}
+
+.btn{
+background:#FFD54F;
+color:#222;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.btn2{
+background:#fff;
+color:#1565C0;
+}
+
+.btn2:hover{
+background:#e3f2fd;
+}
+
+.hero-right img{
+width:100%;
+max-width:520px;
+margin:auto;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+/* =========================
+SECTION TITLE
+========================= */
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:38px;
+color:#1565C0;
+margin-bottom:10px;
+}
+
+.section-title p{
+color:#666;
+font-size:17px;
+}
+/* =====================================
+   ABOUT SECTION
+===================================== */
+
+.about{
+padding:80px 5%;
+background:#fff;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about-image img{
+width:100%;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.about-content h3{
+font-size:32px;
+color:#1565C0;
+margin-bottom:20px;
+}
+
+.about-content p{
+color:#555;
+margin-bottom:25px;
+line-height:1.8;
+}
+
+.about-features{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-bottom:30px;
+}
+
+.feature{
+display:flex;
+align-items:center;
+gap:10px;
+background:#f5f7fb;
+padding:12px;
+border-radius:10px;
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.feature i{
+color:#1565C0;
+font-size:20px;
+}
+
+/* =====================================
+   MISSION
+===================================== */
+
+.mission{
+padding:80px 5%;
+background:#f5f7fb;
+}
+
+.mission-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.mission-card{
+background:#fff;
+padding:35px 25px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.mission-card:hover{
+transform:translateY(-8px);
+}
+
+.mission-card i{
+font-size:50px;
+color:#1565C0;
+margin-bottom:20px;
+}
+
+.mission-card h3{
+margin-bottom:15px;
+font-size:24px;
+}
+
+.mission-card p{
+color:#666;
+}
+
+/* =====================================
+   STATISTICS
+===================================== */
+
+.stats{
+padding:70px 5%;
+background:#1565C0;
+color:#fff;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.stat-box{
+background:rgba(255,255,255,.12);
+padding:35px;
+text-align:center;
+border-radius:15px;
+backdrop-filter:blur(8px);
+transition:.3s;
+}
+
+.stat-box:hover{
+transform:scale(1.05);
+}
+
+.stat-box h2{
+font-size:42px;
+margin-bottom:10px;
+color:#FFD54F;
+}
+
+.stat-box p{
+font-size:18px;
+}
+
+/* =====================================
+   COMMON CARD
+===================================== */
+
+.card{
+background:#fff;
+padding:20px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* =====================================
+   SECTION SPACING
+===================================== */
+
+section{
+padding-top:80px;
+padding-bottom:80px;
+}
+/* =====================================
+   COURSES
+===================================== */
+
+.courses{
+padding:80px 5%;
+background:#ffffff;
+}
+
+.course-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.course-card{
+background:#fff;
+border-radius:15px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+border-top:5px solid #1565C0;
+}
+
+.course-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.course-card h3{
+font-size:24px;
+color:#1565C0;
+margin-bottom:15px;
+}
+
+.course-card p{
+color:#666;
+margin-bottom:15px;
+line-height:1.7;
+}
+
+.course-card h4{
+color:#0d47a1;
+font-size:22px;
+margin-bottom:20px;
+}
+
+.course-card .btn{
+display:inline-block;
+}
+
+/* =====================================
+   COMPUTER LAB
+===================================== */
+
+.lab{
+padding:80px 5%;
+background:#f5f7fb;
+}
+
+.lab-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.lab-image img{
+width:100%;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.lab-content h3{
+font-size:32px;
+color:#1565C0;
+margin-bottom:20px;
+}
+
+.lab-content p{
+color:#555;
+margin-bottom:20px;
+line-height:1.8;
+}
+
+.lab-content ul{
+padding-left:20px;
+}
+
+.lab-content li{
+margin-bottom:12px;
+font-weight:500;
+}
+
+/* =====================================
+   LIBRARY
+===================================== */
+
+.library{
+padding:80px 5%;
+background:#ffffff;
+}
+
+.library-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-bottom:50px;
+}
+
+.library-card{
+background:#1565C0;
+color:#fff;
+padding:35px 20px;
+text-align:center;
+border-radius:15px;
+transition:.3s;
+}
+
+.library-card:hover{
+transform:translateY(-8px);
+}
+
+.library-card i{
+font-size:50px;
+margin-bottom:20px;
+color:#FFD54F;
+}
+
+.library-card h3{
+font-size:22px;
+}
+
+/* =====================================
+   PDF NOTES
+===================================== */
+
+.pdf-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.pdf-card{
+background:#fff;
+padding:25px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.pdf-card:hover{
+transform:translateY(-6px);
+}
+
+.pdf-card h3{
+font-size:20px;
+color:#1565C0;
+margin-bottom:20px;
+word-break:break-word;
+}
+
+.pdf-card a{
+display:inline-block;
+padding:12px 22px;
+background:#1565C0;
+color:#fff;
+border-radius:8px;
+font-weight:600;
+transition:.3s;
+}
+
+.pdf-card a:hover{
+background:#0d47a1;
+}
+/* =====================================
+   LIVE CLASS
+===================================== */
+
+.live{
+padding:80px 5%;
+background:linear-gradient(135deg,#1565C0,#42A5F5);
+color:#fff;
+text-align:center;
+}
+
+.live-box{
+margin-top:30px;
+}
+
+.live-box .btn{
+display:inline-block;
+padding:15px 35px;
+font-size:20px;
+font-weight:700;
+background:#FFD54F;
+color:#222;
+border-radius:12px;
+transition:.3s;
+}
+
+.live-box .btn:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* =====================================
+   NOTICE
+===================================== */
+
+.notice{
+padding:80px 5%;
+background:#fff;
+}
+
+#noticeContainer{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.notice-card{
+background:#fff;
+border-left:6px solid #1565C0;
+padding:25px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.notice-card:hover{
+transform:translateY(-5px);
+}
+
+.notice-card h3{
+color:#1565C0;
+margin-bottom:12px;
+font-size:22px;
+}
+
+.notice-card p{
+color:#555;
+line-height:1.7;
+}
+
+/* =====================================
+   GALLERY
+===================================== */
+
+.gallery{
+padding:80px 5%;
+background:#f5f7fb;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.gallery-grid img{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.10);
+transition:.35s;
+cursor:pointer;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+/* Cloudinary Dynamic Images */
+
+.gallery-card{
+overflow:hidden;
+border-radius:15px;
+background:#fff;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.gallery-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+transition:.35s;
+}
+
+.gallery-card:hover img{
+transform:scale(1.08);
+}
+
+/* =====================================
+   COMMON ANIMATIONS
+===================================== */
+
+.fade-up{
+animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.zoom{
+animation:zoom .5s ease;
+}
+
+@keyframes zoom{
+
+0%{
+transform:scale(.8);
+opacity:0;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+/* =====================================
+   CONTACT SECTION
+===================================== */
+
+.contact{
+padding:80px 5%;
+background:#ffffff;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.contact-info{
+background:#f8f9fa;
+padding:35px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.contact-info h3{
+font-size:30px;
+color:#1565C0;
+margin-bottom:20px;
+}
+
+.contact-info p{
+margin:12px 0;
+font-size:17px;
+color:#555;
+line-height:1.8;
+}
+
+.contact-map iframe{
+width:100%;
+height:380px;
+border:none;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* =====================================
+   WHATSAPP BUTTON
+===================================== */
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+z-index:999;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+transition:.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.12);
+background:#1ebe5d;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer{
+background:#0d47a1;
+color:#fff;
+text-align:center;
+padding:30px 20px;
+}
+
+footer p{
+margin:8px 0;
+font-size:15px;
+letter-spacing:.5px;
+}
+
+/* =====================================
+   SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#e9ecef;
+}
+
+::-webkit-scrollbar-thumb{
+background:#1565C0;
+border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#0d47a1;
+}
+
+/* =====================================
+   SELECTION
+===================================== */
+
+::selection{
+background:#1565C0;
+color:#fff;
+}
+
+/* =====================================
+   SMOOTH TRANSITIONS
+===================================== */
+
+button,
+a,
+img,
+.card,
+.course-card,
+.library-card,
+.notice-card,
+.gallery-card{
+transition:all .3s ease;
+}
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+/* Tablet */
+
+@media (max-width:992px){
+
+.header{
+padding:15px 20px;
+}
+
+.hero,
+.about-grid,
+.lab-grid,
+.contact-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-left p{
+margin:auto auto 30px;
+}
+
+.hero-btns{
+justify-content:center;
+}
+
+.about-features{
+grid-template-columns:1fr;
+}
+
+.mission-grid{
+grid-template-columns:1fr;
+}
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.course-grid,
+.library-grid,
+.pdf-grid,
+.gallery-grid,
+#noticeContainer{
+grid-template-columns:repeat(2,1fr);
+}
+
+.contact-info{
+text-align:left;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.top-bar{
+flex-direction:column;
+text-align:center;
+}
+
+#menuBtn{
+display:block;
+}
+
+#navbar{
+position:absolute;
+top:85px;
+left:0;
+width:100%;
+background:#fff;
+display:none;
+flex-direction:column;
+padding:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+#navbar.active{
+display:flex;
+}
+
+.hero{
+padding:50px 20px;
+}
+
+.hero-left h1{
+font-size:38px;
+}
+
+.hero-left p{
+font-size:16px;
+}
+
+.section-title h2{
+font-size:30px;
+}
+
+.about-content h3,
+.lab-content h3,
+.contact-info h3{
+font-size:26px;
+}
+
+.stats-grid,
+.course-grid,
+.library-grid,
+.pdf-grid,
+.gallery-grid,
+#noticeContainer{
+grid-template-columns:1fr;
+}
+
+.hero-btns{
+flex-direction:column;
+align-items:center;
+}
+
+.btn,
+.btn2{
+width:220px;
+text-align:center;
+}
+
+.whatsapp{
+width:55px;
+height:55px;
+font-size:26px;
+right:15px;
+bottom:15px;
+}
+
+.contact-map iframe{
+height:280px;
+}
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px){
+
+.logo img{
+width:45px;
+height:45px;
+}
+
+.logo h2{
+font-size:22px;
+}
+
+.logo p{
+font-size:11px;
+}
+
+.hero-left h1{
+font-size:30px;
+}
+
+.tag{
+font-size:13px;
+padding:7px 14px;
+}
+
+.section-title h2{
+font-size:25px;
+}
+
+.stat-box h2{
+font-size:32px;
+}
+
+.course-card,
+.library-card,
+.notice-card,
+.pdf-card,
+.contact-info{
+padding:20px;
+}
+
+footer{
+font-size:14px;
+}
+
+}
+
+/* =====================================
+   IMAGE RESPONSIVE
+===================================== */
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* =====================================
+   BUTTON EFFECTS
+===================================== */
+
+button,
+.btn,
+.btn2{
+cursor:pointer;
+border:none;
+outline:none;
+}
+
+button:active,
+.btn:active,
+.btn2:active{
+transform:scale(.96);
+}
+
+/* =====================================
+   LOADING ANIMATION
+===================================== */
+
+.loading{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+}
+
+.loading::after{
+content:"";
+width:35px;
+height:35px;
+border:4px solid #ddd;
+border-top:4px solid #1565C0;
+border-radius:50%;
+animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+/* =====================================
+   END OF FILE
+===================================== */
